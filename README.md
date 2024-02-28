@@ -109,7 +109,6 @@ with open(input_file_path, 'r') as input_file, open (output_csv_path, 'w', newli
             
         # Write the row to the CSV file
         csv_writer.writerow(processed_row)
-import pandas as pd
 
 input_csv_path = 'C:/VT_PL/P192_2PAstability_toluene_100uM/OneDrive_2024-02-14/13.02.2024_ P192 toluene stability over 6 h/output_concatenated.csv'
 new_csv_path = 'C:/VT_PL/P192_2PAstability_toluene_100uM/OneDrive_2024-02-14/13.02.2024_ P192 toluene stability over 6 h/correction_file.csv'
@@ -144,8 +143,6 @@ except FileNotFoundError:
 except Exception as e:
     print("An error occurred:", e)
 
-import pandas as pd
-
 input_csv_path = 'C:/VT_PL/P192_2PAstability_toluene_100uM/OneDrive_2024-02-14/13.02.2024_ P192 toluene stability over 6 h/output_concatenated.csv'
 
 # Read the input CSV file
@@ -177,8 +174,6 @@ except FileNotFoundError:
 except Exception as e:
     print("An error occurred:", e)
 
-import pandas as pd
-
 input_csv_path = 'C:/VT_PL/P192_2PAstability_toluene_100uM/OneDrive_2024-02-14/13.02.2024_ P192 toluene stability over 6 h/output_concatenated.csv'
 
 # Read the input CSV file
@@ -204,8 +199,6 @@ except FileNotFoundError:
     print("File not found. Please check the input CSV file path:", input_csv_path)
 except Exception as e:
     print("An error occurred:", e)
-
-import pandas as pd
 
 output_csv_path = 'C:/VT_PL/P192_2PAstability_toluene_100uM/OneDrive_2024-02-14/13.02.2024_ P192 toluene stability over 6 h/output_concatenated_corrected.csv'
 
