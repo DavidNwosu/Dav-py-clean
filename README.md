@@ -1,5 +1,7 @@
 # Deep cleaning of mai-tai pulsed laser two-photon kinetic stability data
 import pandas as pd
+import csv
+import re
 
 filenames = [
     'C:/VT_PL/P192_2PAstability_toluene_100uM/OneDrive_2024-02-14/13.02.2024_ P192 toluene stability over 6 h/P192_toluene_kineticscan00000.txt',
@@ -7,16 +9,13 @@ filenames = [
     # Add more filenames here...
 ]
 
-# Create an empty DataFrame to store the contents of each file
 data = pd.DataFrame()
 
-# Read each file and concatenate its contents into a new column
 for filename in filenames:
     with open(filename, 'r') as file:
         column_name = filename.split('/')[-1].split('.')[0]  # Extracting column name from file path
         data[column_name] = [line.strip() for line in file]
 
-# Write the concatenated data to an Excel file
 output_excel_path = 'C:/VT_PL/P192_2PAstability_toluene_100uM/OneDrive_2024-02-14/13.02.2024_ P192 toluene stability over 6 h/output_concatenated.xlsx'
 data.to_excel(output_excel_path, index=False)
 
@@ -49,12 +48,10 @@ with open(output_file_path, 'r') as file:
             print(parts[0], parts[1])
         else:
             print("Error: Not enough columns in line:", line)
-import csv
 
 input_file_path = 'C:/VT_PL/P192_2PAstability_toluene_100uM/OneDrive_2024-02-14/13.02.2024_ P192 toluene stability over 6 h/output_concatenated.txt'
 output_csv_path = 'C:/VT_PL/P192_2PAstability_toluene_100uM/OneDrive_2024-02-14/13.02.2024_ P192 toluene stability over 6 h/output_concatenated.csv'
 
-# Open the input tab-separated text file and the output CSV file
 with open(input_file_path, 'r') as input_file, open(output_csv_path, 'w', newline='') as output_csv:
     # Create a CSV writer object
     csv_writer = csv.writer(output_csv)
@@ -64,13 +61,9 @@ with open(input_file_path, 'r') as input_file, open(output_csv_path, 'w', newlin
         row = line.strip().split()  # Split the line by space delimiter
         csv_writer.writerow(row)  # Write the row to the CSV file
 
-import csv
-import re
-
 input_file_path = 'C:/VT_PL/P192_2PAstability_toluene_100uM/OneDrive_2024-02-14/13.02.2024_ P192 toluene stability over 6 h/output_concatenated.txt'
 output_csv_path = 'C:/VT_PL/P192_2PAstability_toluene_100uM/OneDrive_2024-02-14/13.02.2024_ P192 toluene stability over 6 h/output_concatenated.csv'
 
-# Open the input tab-separated text file and the output CSV file
 with open(input_file_path, 'r') as input_file, open(output_csv_path, 'w', newline='') as output_csv:
     # Create a CSV writer object
     csv_writer = csv.writer(output_csv)
@@ -85,7 +78,6 @@ with open(input_file_path, 'r') as input_file, open(output_csv_path, 'w', newlin
 input_file_path = 'C:/VT_PL/P192_2PAstability_toluene_100uM/OneDrive_2024-02-14/13.02.2024_ P192 toluene stability over 6 h/output_concatenated.txt'
 output_csv_path = 'C:/VT_PL/P192_2PAstability_toluene_100uM/OneDrive_2024-02-14/13.02.2024_ P192 toluene stability over 6 h/output_concatenated.csv'
 
-# Open the input tab-separated text file and the output csv file
 with open(input_file_path, 'r') as input_file, open (output_csv_path, 'w', newline='') as output_csv:
     # Create a CSV writer object
     csv_writer = csv.writer(output_csv)
@@ -112,7 +104,6 @@ with open(input_file_path, 'r') as input_file, open (output_csv_path, 'w', newli
 input_csv_path = 'C:/VT_PL/P192_2PAstability_toluene_100uM/OneDrive_2024-02-14/13.02.2024_ P192 toluene stability over 6 h/output_concatenated.csv'
 new_csv_path = 'C:/VT_PL/P192_2PAstability_toluene_100uM/OneDrive_2024-02-14/13.02.2024_ P192 toluene stability over 6 h/correction_file.csv'
 
-# Read the input and new CSV files
 try:
     input_df = pd.read_csv(input_csv_path, header=None)  # Assuming no headers
     new_df = pd.read_csv(new_csv_path, header=None)  # Assuming no headers
@@ -144,7 +135,6 @@ except Exception as e:
 
 input_csv_path = 'C:/VT_PL/P192_2PAstability_toluene_100uM/OneDrive_2024-02-14/13.02.2024_ P192 toluene stability over 6 h/output_concatenated.csv'
 
-# Read the input CSV file
 try:
     input_df = pd.read_csv(input_csv_path, header=None)
 
@@ -175,7 +165,6 @@ except Exception as e:
 
 input_csv_path = 'C:/VT_PL/P192_2PAstability_toluene_100uM/OneDrive_2024-02-14/13.02.2024_ P192 toluene stability over 6 h/output_concatenated.csv'
 
-# Read the input CSV file
 try:
     input_df = pd.read_csv(input_csv_path, header=None)
 
@@ -201,7 +190,6 @@ except Exception as e:
 
 output_csv_path = 'C:/VT_PL/P192_2PAstability_toluene_100uM/OneDrive_2024-02-14/13.02.2024_ P192 toluene stability over 6 h/output_concatenated_corrected.csv'
 
-# Read the existing CSV file
 try:
     output_df = pd.read_csv(output_csv_path, header=None)
 
