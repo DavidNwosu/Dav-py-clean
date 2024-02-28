@@ -1,4 +1,4 @@
-# Deep cleaning of mai-tai pulsed laser two-photon kinetic stability experimental data
+# Deep cleaning of mai-tai pulsed laser two-photon kinetic stability data
 import pandas as pd
 
 filenames = [
