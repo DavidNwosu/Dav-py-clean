@@ -1,7 +1,11 @@
 deep cleaning of mai-tai pulsed laser two-photon kinetic stability data
+
 multiple text files each containing emission wavelengths, corresponding uncorrected photon intensity, and other non-numeric data.
+
 emission wavelengths remain constant 
+
 each text file represents average upconverted luminescence after 3 mins at constant 850 nm excitation
+
 code snippet below deletes all non-numeric data, concatenates all text files into one csv file, arranges data into one column for wavelength and multiple columns representing corresponding photon intensity averaged after every 3 mins. This code automatically places headers for all columns, and applies filter correction (in this case 700 nm filter was used) for all photon intensity.
 
 import pandas as pd
